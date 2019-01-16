@@ -1,0 +1,16 @@
+<button ng-click="$ctrl.addNewTaskAction()">addTask</button>
+<p>Tasks count: {{$ctrl.tasks | keylength}}<p>
+
+<p ng-hide="$ctrl.selectedTasks.length==0">Selected count: {{$ctrl.selectedTasks.length}}<p>
+<table ng-hide="$ctrl.selectedTasks.length==0">
+        <tr>
+                <td><button ng-click="$ctrl.markTasksAsCompleted()">Mark as completed</input></td>
+                <td><button ng-click="$ctrl.deleteTasks()">Delete</button></td>
+        </tr> 
+</table>
+<table>
+    <tr ng-repeat="(key, task) in $ctrl.tasks">
+        <td><input type="checkbox" ng-click="$ctrl.checkTask(key)" ng-checked="$ctrl.isTaskSelected(key)"/></td><td><task task="task"></task></td>
+    </tr> 
+</table>
+
